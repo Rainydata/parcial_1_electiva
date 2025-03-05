@@ -1,0 +1,39 @@
+# ----------------- DOCKER COMPOSE -----------------
+
+version: '3.7'
+services:
+  database_electiva:
+    build:
+      context: ./MySQL
+      dockerfile: Dockerfile
+    container_name: mysql_parcial_electiva_eam
+    restart: always
+    ports:
+      - "4500:3306" 
+    volumes:
+      - ./Config/mysql:/var/lib/mysql
+    hostname: apps_database
+    networks:
+      - eam_electiva
+    healthcheck:
+      test: ["CMD", "mysql", "-u", "root", "-proot"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+# -------------- ADMINER ----------------------
+
+  adminer_electiva:
+    image: adminer
+    container_name: adminer_electiva_eam
+    restart: always
+    ports:
+      - "8080:8080"
+    networks:
+      - eam_electiva  
+
+# ----------------- NETWORKS -----------------
+networks:
+  eam_electiva:
+    driver: bridge
+    name: eam_electiva
