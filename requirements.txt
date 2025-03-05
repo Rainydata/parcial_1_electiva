@@ -1,0 +1,6 @@
+#dependencies: 
+
+fastapi==lastest 
+# Requires: pydantic, starlette, typing-extensions  
+uvicorn==lastest
+# Requires: asgiref, click, h11, typing-extensions
