@@ -1,0 +1,10 @@
+Docker/Config/mysql/
+!Docker/Config/mysql/my.cnf  # Permitir la configuración personalizada
+Docker/Config/mysql/*.sock  # Evitar error con mysql.sock
+Docker/Config/mysql/*.pid
+Docker/Config/mysql/*.err
+Docker/Config/mysql/*.index
+Docker/Config/mysql/*.cnf~
+Docker/Config/mysql/ib_logfile*
+Docker/Config/mysql/ibdata*
+Docker/Config/mysql/#*

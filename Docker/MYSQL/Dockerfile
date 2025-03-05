@@ -1,0 +1,10 @@
+FROM mysql:8.0
+
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=parcial_electiva_eam
+ENV MYSQL_USER=Bryan
+ENV MYSQL_PASSWORD=root
+
+EXPOSE 3306  
+
+
